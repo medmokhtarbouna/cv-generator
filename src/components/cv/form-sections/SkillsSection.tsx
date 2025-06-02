@@ -39,7 +39,25 @@ export const SkillsSection = ({ data, onChange }: SkillsSectionProps) => {
     ));
   };
 
+  const groupedSkills = data.reduce((acc, skill) => {
+    if (!acc[skill.category]) {
+      acc[skill.category] = [];
+    }
+    acc[skill.category].push(skill);
+    return acc;
+  }, {} as Record<string, Skill[]>);
 
+  const renderStars = (level: number, skillId: string) => {
+    return Array.from({ length: 5 }, (_, i) => (
+      <Star
+        key={i}
+        className={`h-4 w-4 cursor-pointer ${
+          i < level ? "text-yellow-400 fill-current" : "text-gray-300"
+        }`}
+        onClick={() => updateSkill(skillId, "level", i + 1)}
+      />
+    ));
+  };
 
   return (
     <div className="space-y-6">
