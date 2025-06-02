@@ -10,7 +10,30 @@ interface CustomizationPanelProps {
 }
 
 export const CustomizationPanel = ({ customization, updateCustomization }: CustomizationPanelProps) => {
- 
+  const fonts = [
+    { name: "Inter", value: "Inter" },
+    { name: "Roboto", value: "Roboto" },
+    { name: "Poppins", value: "Poppins" },
+    { name: "Playfair Display", value: "Playfair Display" },
+    { name: "Amiri", value: "Amiri" }
+  ];
+
+  const colors = [
+    { name: "Blue", value: "#3B82F6" },
+    { name: "Purple", value: "#8B5CF6" },
+    { name: "Green", value: "#10B981" },
+    { name: "Red", value: "#EF4444" },
+    { name: "Orange", value: "#F59E0B" },
+    { name: "Pink", value: "#EC4899" },
+    { name: "Indigo", value: "#6366F1" },
+    { name: "Teal", value: "#14B8A6" }
+  ];
+
+  const layouts = [
+    { name: "Left Sidebar", value: "sidebar-left" },
+    { name: "Right Sidebar", value: "sidebar-right" },
+    { name: "Top Header", value: "top-header" }
+  ];
 
   return (
     <div className="p-6 space-y-6">
