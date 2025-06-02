@@ -115,7 +115,21 @@ export const CustomizationPanel = ({ customization, updateCustomization }: Custo
 
       {/* Layout */}
       <div>
-        
+        <Label htmlFor="layout" className="text-base font-medium mb-3 block">
+          📐 Layout Style
+        </Label>
+        <Select value={customization.layout} onValueChange={(value) => updateCustomization("layout", value)}>
+          <SelectTrigger>
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {layouts.map(layout => (
+              <SelectItem key={layout.value} value={layout.value}>
+                {layout.name}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       {/* Color Presets */}
