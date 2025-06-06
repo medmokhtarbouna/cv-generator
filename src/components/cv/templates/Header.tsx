@@ -16,7 +16,16 @@ export const Header = () => {
             </div>
           </div>
           
-          
+          <div className="flex items-center space-x-3">
+            <button className="flex items-center space-x-2 px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors">
+              <Eye className="h-4 w-4" />
+              <span>Preview</span>
+            </button>
+            <button className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">
+              <Download className="h-4 w-4" />
+              <span>Export PDF</span>
+            </button>
+          </div>
         </div>
       </div>
     </header>
