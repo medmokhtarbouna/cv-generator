@@ -8,7 +8,36 @@ interface TemplateSelectorProps {
 }
 
 export const TemplateSelector = ({ selectedTemplate, onTemplateChange }: TemplateSelectorProps) => {
-  const templates = [];
+  const templates = [
+    {
+      id: "classic" as Template,
+      name: "Classic",
+      description: "Traditional professional layout",
+      preview: "🏛️",
+      color: "from-blue-500 to-blue-600"
+    },
+    {
+      id: "modern" as Template,
+      name: "Modern",
+      description: "Clean contemporary design",
+      preview: "✨",
+      color: "from-purple-500 to-purple-600"
+    },
+    {
+      id: "creative" as Template,
+      name: "Creative",
+      description: "Bold and colorful design",
+      preview: "🎨",
+      color: "from-pink-500 to-purple-600"
+    },
+    {
+      id: "rtl" as Template,
+      name: "RTL",
+      description: "Right-to-left layout support",
+      preview: "🌍",
+      color: "from-green-500 to-green-600"
+    }
+  ];
 
   return (
     <div className="p-6 space-y-6">
