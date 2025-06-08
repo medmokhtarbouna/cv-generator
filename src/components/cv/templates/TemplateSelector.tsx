@@ -81,7 +81,12 @@ export const TemplateSelector = ({ selectedTemplate, onTemplateChange }: Templat
 
       <div className="bg-gray-50 p-4 rounded-lg">
         <h4 className="font-medium text-gray-800 mb-2">💡 Template Tips</h4>
-        
+        <ul className="text-sm text-gray-600 space-y-1">
+          <li>• <strong>Classic:</strong> Best for traditional industries (finance, law, healthcare)</li>
+          <li>• <strong>Modern:</strong> Perfect for tech, consulting, and corporate roles</li>
+          <li>• <strong>Creative:</strong> Ideal for design, marketing, and creative fields</li>
+          <li>• <strong>RTL:</strong> Designed for Arabic and right-to-left languages</li>
+        </ul>
       </div>
     </div>
   );
