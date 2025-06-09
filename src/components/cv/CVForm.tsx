@@ -1,12 +1,12 @@
 
 import { useState } from "react";
 import { CVData } from "@/types/cv";
-import { PersonalInfoSection } from "../form-sections/PersonalInfoSection";
-import { ExperienceSection } from "../form-sections/ExperienceSection";
-import { EducationSection } from "../form-sections/EducationSection";
-import { SkillsSection } from "../form-sections/SkillsSection";
-import { LanguagesSection } from "../form-sections/LanguagesSection";
-import { CertificationsSection } from "../form-sections/CertificationsSection";
+import { PersonalInfoSection } from "./form-sections/PersonalInfoSection";
+import { ExperienceSection } from "./form-sections/ExperienceSection";
+import { EducationSection } from "./form-sections/EducationSection";
+import { SkillsSection } from "./form-sections/SkillsSection";
+import { LanguagesSection } from "./form-sections/LanguagesSection";
+import { CertificationsSection } from "./form-sections/CertificationsSection";
 
 interface CVFormProps {
   cvData: CVData;
