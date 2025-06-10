@@ -19,7 +19,62 @@ export const ClassicTemplate = ({ cvData, customization }: TemplateProps) => {
       style={{ fontFamily }}
     >
       {/* Header */}
-     
+      <header className="border-b-2 pb-6 mb-6" style={{ borderColor: primaryColor }}>
+        <div className="flex items-start space-x-6">
+          {personalInfo.photo && (
+            <img 
+              src={personalInfo.photo} 
+              alt="Profile" 
+              className="w-24 h-24 rounded-full object-cover border-4"
+              style={{ borderColor: primaryColor }}
+            />
+          )}
+          <div className="flex-1">
+            <h1 className="text-3xl font-bold mb-2" style={{ color: primaryColor }}>
+              {personalInfo.fullName || "Your Name"}
+            </h1>
+            <h2 className="text-xl text-gray-600 mb-4">
+              {personalInfo.jobTitle || "Your Job Title"}
+            </h2>
+            
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              {personalInfo.email && (
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-4 w-4" style={{ color: primaryColor }} />
+                  <span>{personalInfo.email}</span>
+                </div>
+              )}
+              {personalInfo.phone && (
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-4 w-4" style={{ color: primaryColor }} />
+                  <span>{personalInfo.phone}</span>
+                </div>
+              )}
+              {personalInfo.location && (
+                <div className="flex items-center space-x-2">
+                  <MapPin className="h-4 w-4" style={{ color: primaryColor }} />
+                  <span>{personalInfo.location}</span>
+                </div>
+              )}
+              {personalInfo.website && (
+                <div className="flex items-center space-x-2">
+                  <Globe className="h-4 w-4" style={{ color: primaryColor }} />
+                  <span>{personalInfo.website}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        
+        {personalInfo.summary && (
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold mb-2" style={{ color: primaryColor }}>
+              Professional Summary
+            </h3>
+            <p className="text-gray-700 leading-relaxed">{personalInfo.summary}</p>
+          </div>
+        )}
+      </header>
 
       {/* Experience */}
       {experience.length > 0 && (
