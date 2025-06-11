@@ -20,71 +20,7 @@ export const CreativeTemplate = ({ cvData, customization }: TemplateProps) => {
       style={{ fontFamily }}
     >
       {/* Creative Header with Geometric Shapes */}
-      <header className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 text-white p-8">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full transform translate-x-32 -translate-y-32" />
-        <div className="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-10 rounded-full transform -translate-x-24 translate-y-24" />
-        
-        <div className="relative z-10 flex items-center space-x-8">
-          {personalInfo.photo && (
-            <div className="relative">
-              <div className="w-36 h-36 rounded-full bg-white p-2 shadow-xl">
-                <img 
-                  src={personalInfo.photo} 
-                  alt="Profile" 
-                  className="w-full h-full rounded-full object-cover"
-                />
-              </div>
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                <Zap className="h-4 w-4 text-yellow-800" />
-              </div>
-            </div>
-          )}
-          <div className="flex-1">
-            <h1 className="text-5xl font-bold mb-3 text-white">
-              {personalInfo.fullName || "Your Name"}
-            </h1>
-            <h2 className="text-2xl mb-6 text-blue-100 font-light">
-              {personalInfo.jobTitle || "Your Job Title"}
-            </h2>
-            
-            <div className="grid grid-cols-2 gap-4 text-sm">
-              {personalInfo.email && (
-                <div className="flex items-center space-x-3 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <Mail className="h-4 w-4" />
-                  <span>{personalInfo.email}</span>
-                </div>
-              )}
-              {personalInfo.phone && (
-                <div className="flex items-center space-x-3 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <Phone className="h-4 w-4" />
-                  <span>{personalInfo.phone}</span>
-                </div>
-              )}
-              {personalInfo.location && (
-                <div className="flex items-center space-x-3 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <MapPin className="h-4 w-4" />
-                  <span>{personalInfo.location}</span>
-                </div>
-              )}
-              {personalInfo.website && (
-                <div className="flex items-center space-x-3 bg-white bg-opacity-20 backdrop-blur-sm px-4 py-2 rounded-full">
-                  <Globe className="h-4 w-4" />
-                  <span>{personalInfo.website}</span>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-        
-        {personalInfo.summary && (
-          <div className="mt-8 relative z-10">
-            <div className="bg-white bg-opacity-20 backdrop-blur-sm p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-3">✨ About Me</h3>
-              <p className="text-blue-100 leading-relaxed">{personalInfo.summary}</p>
-            </div>
-          </div>
-        )}
-      </header>
+      
 
       <div className="p-8 bg-gray-50">
         {/* Experience with Creative Timeline */}
