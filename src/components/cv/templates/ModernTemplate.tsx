@@ -19,7 +19,79 @@ export const ModernTemplate = ({ cvData, customization }: TemplateProps) => {
       className="h-full text-gray-800 bg-gradient-to-br from-gray-50 to-gray-100"
       style={{ fontFamily }}
     >
-     
+      {/* Header */}
+      <header className="bg-white p-8 shadow-sm">
+        <div className="flex items-center space-x-8">
+          {personalInfo.photo && (
+            <div className="relative">
+              <img 
+                src={personalInfo.photo} 
+                alt="Profile" 
+                className="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-white"
+              />
+              <div 
+                className="absolute inset-0 rounded-full border-4 border-opacity-20"
+                style={{ borderColor: primaryColor }}
+              />
+            </div>
+          )}
+          <div className="flex-1">
+            <h1 className="text-4xl font-bold mb-2 bg-gradient-to-r bg-clip-text text-transparent"
+                style={{ backgroundImage: `linear-gradient(to right, ${primaryColor}, ${accentColor})` }}>
+              {personalInfo.fullName || "Your Name"}
+            </h1>
+            <h2 className="text-2xl text-gray-600 mb-6 font-light">
+              {personalInfo.jobTitle || "Your Job Title"}
+            </h2>
+            
+            <div className="grid grid-cols-2 gap-4 text-sm">
+              {personalInfo.email && (
+                <div className="flex items-center space-x-3 bg-gray-50 px-3 py-2 rounded-lg">
+                  <Mail className="h-4 w-4" style={{ color: primaryColor }} />
+                  <span>{personalInfo.email}</span>
+                </div>
+              )}
+              {personalInfo.phone && (
+                <div className="flex items-center space-x-3 bg-gray-50 px-3 py-2 rounded-lg">
+                  <Phone className="h-4 w-4" style={{ color: primaryColor }} />
+                  <span>{personalInfo.phone}</span>
+                </div>
+              )}
+              {personalInfo.location && (
+                <div className="flex items-center space-x-3 bg-gray-50 px-3 py-2 rounded-lg">
+                  <MapPin className="h-4 w-4" style={{ color: primaryColor }} />
+                  <span>{personalInfo.location}</span>
+                </div>
+              )}
+              {personalInfo.website && (
+                <div className="flex items-center space-x-3 bg-gray-50 px-3 py-2 rounded-lg">
+                  <Globe className="h-4 w-4" style={{ color: primaryColor }} />
+                  <span>{personalInfo.website}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        
+        {personalInfo.summary && (
+          <div className="mt-8 bg-gray-50 p-6 rounded-lg">
+            <h3 className="text-lg font-semibold mb-3" style={{ color: primaryColor }}>
+              About Me
+            </h3>
+            <p className="text-gray-700 leading-relaxed">{personalInfo.summary}</p>
+          </div>
+        )}
+      </header>
+
+      <div className="p-8">
+      
+
+        
+
+        
+
+        
+      </div>
     </div>
   );
 };
