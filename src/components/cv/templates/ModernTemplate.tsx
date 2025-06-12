@@ -84,7 +84,45 @@ export const ModernTemplate = ({ cvData, customization }: TemplateProps) => {
       </header>
 
       <div className="p-8">
-      
+        {/* Experience */}
+        {experience.length > 0 && (
+          <section className="mb-10">
+            <div className="flex items-center mb-6">
+              <div 
+                className="w-8 h-8 rounded-full mr-4"
+                style={{ backgroundColor: primaryColor }}
+              />
+              <h3 className="text-2xl font-bold" style={{ color: primaryColor }}>
+                Experience
+              </h3>
+            </div>
+            <div className="space-y-8">
+              {experience.map((exp, index) => (
+                <div key={exp.id} className="relative bg-white p-6 rounded-lg shadow-sm border-l-4"
+                     style={{ borderLeftColor: index % 2 === 0 ? primaryColor : accentColor }}>
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <h4 className="font-bold text-xl text-gray-800">{exp.jobTitle}</h4>
+                      <p className="text-lg font-medium" style={{ color: primaryColor }}>{exp.company}</p>
+                      <p className="text-gray-600">{exp.location}</p>
+                    </div>
+                    <div className="bg-gray-100 px-4 py-2 rounded-full">
+                      <div className="text-sm text-gray-600 flex items-center">
+                        <Calendar className="h-4 w-4 mr-2" />
+                        {exp.startDate} - {exp.current ? "Present" : exp.endDate}
+                      </div>
+                    </div>
+                  </div>
+                  {exp.description && (
+                    <div className="text-gray-700 whitespace-pre-line leading-relaxed">
+                      {exp.description}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         
 
