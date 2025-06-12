@@ -161,7 +161,63 @@ export const ModernTemplate = ({ cvData, customization }: TemplateProps) => {
           </section>
         )}
 
-        
+        {/* Skills */}
+        {skills.length > 0 && (
+          <section className="mb-10">
+            <div className="flex items-center mb-6">
+              <div 
+                className="w-8 h-8 rounded-full mr-4"
+                style={{ backgroundColor: primaryColor }}
+              />
+              <h3 className="text-2xl font-bold" style={{ color: primaryColor }}>
+                Skills
+              </h3>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {Object.entries(
+                  skills.reduce((acc, skill) => {
+                    if (!acc[skill.category]) acc[skill.category] = [];
+                    acc[skill.category].push(skill);
+                    return acc;
+                  }, {} as Record<string, typeof skills>)
+                ).map(([category, categorySkills]) => (
+                  <div key={category}>
+                    <h4 className="font-bold mb-4 text-gray-800 text-lg">{category}</h4>
+                    <div className="space-y-3">
+                      {categorySkills.map((skill) => (
+                        <div key={skill.id}>
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="font-medium text-gray-700">{skill.name}</span>
+                            <div className="flex space-x-1">
+                              {Array.from({ length: 5 }, (_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`w-4 h-4 ${
+                                    i < skill.level ? "text-yellow-400 fill-current" : "text-gray-300"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          </div>
+                          <div className="w-full bg-gray-200 rounded-full h-2">
+                            <div 
+                              className="h-2 rounded-full transition-all duration-300"
+                              style={{ 
+                                width: `${(skill.level / 5) * 100}%`,
+                                backgroundColor: primaryColor 
+                              }}
+                            />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         
       </div>
