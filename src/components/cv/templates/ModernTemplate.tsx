@@ -219,7 +219,50 @@ export const ModernTemplate = ({ cvData, customization }: TemplateProps) => {
           </section>
         )}
 
-        
+        {/* Languages and Certifications */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Languages */}
+          {languages.length > 0 && (
+            <section className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-bold mb-4" style={{ color: primaryColor }}>
+                Languages
+              </h3>
+              <div className="space-y-3">
+                {languages.map((lang) => (
+                  <div key={lang.id} className="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                    <span className="font-medium text-gray-700">{lang.name}</span>
+                    <span 
+                      className="px-3 py-1 rounded-full text-sm font-medium text-white"
+                      style={{ backgroundColor: accentColor }}
+                    >
+                      {lang.level}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Certifications */}
+          {certifications.length > 0 && (
+            <section className="bg-white p-6 rounded-lg shadow-sm">
+              <h3 className="text-xl font-bold mb-4" style={{ color: primaryColor }}>
+                Certifications
+              </h3>
+              <div className="space-y-4">
+                {certifications.map((cert) => (
+                  <div key={cert.id} className="p-3 bg-gray-50 rounded-lg">
+                    <h4 className="font-bold text-gray-800">{cert.name}</h4>
+                    <p className="text-gray-600">{cert.issuer}</p>
+                    {cert.date && (
+                      <p className="text-gray-500 text-sm mt-1">{cert.date}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+        </div>
       </div>
     </div>
   );
