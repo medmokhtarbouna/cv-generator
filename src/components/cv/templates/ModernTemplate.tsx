@@ -124,7 +124,42 @@ export const ModernTemplate = ({ cvData, customization }: TemplateProps) => {
           </section>
         )}
 
-        
+        {/* Education */}
+        {education.length > 0 && (
+          <section className="mb-10">
+            <div className="flex items-center mb-6">
+              <div 
+                className="w-8 h-8 rounded-full mr-4"
+                style={{ backgroundColor: accentColor }}
+              />
+              <h3 className="text-2xl font-bold" style={{ color: primaryColor }}>
+                Education
+              </h3>
+            </div>
+            <div className="grid gap-6">
+              {education.map((edu) => (
+                <div key={edu.id} className="bg-white p-6 rounded-lg shadow-sm">
+                  <div className="flex justify-between items-start mb-2">
+                    <div>
+                      <h4 className="font-bold text-lg text-gray-800">{edu.degree}</h4>
+                      <p className="font-medium" style={{ color: primaryColor }}>{edu.institution}</p>
+                      <p className="text-gray-600">{edu.location}</p>
+                      {edu.gpa && <p className="text-sm text-gray-500 mt-1">GPA: {edu.gpa}</p>}
+                    </div>
+                    <div className="bg-gray-100 px-3 py-1 rounded-full">
+                      <span className="text-sm text-gray-600">
+                        {edu.startDate} - {edu.endDate}
+                      </span>
+                    </div>
+                  </div>
+                  {edu.description && (
+                    <p className="text-gray-700 mt-3">{edu.description}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         
 
